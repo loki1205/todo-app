@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import checkIcon from '../images/icon-check.svg'
+import crossIcon from '../images/icon-cross.svg'
 interface ListType{
     id: number,
     task: string,
@@ -75,7 +77,7 @@ function TodoList(props:PropsType){
                                     <div className={darkModeEnabled && element.completed ? 'uncheck-dark completed' : element.completed ? 'uncheck-light completed' :  darkModeEnabled ? 'uncheck-dark' : 'uncheck-light'}>
                                         {
                                             element.completed ? (
-                                                <img src="../images/icon-check.svg"></img>
+                                                <img src={checkIcon}></img>
                                             ) : ''
                                         }
                                     </div>
@@ -83,7 +85,7 @@ function TodoList(props:PropsType){
                             </div>
                             <span className={element.completed && darkModeEnabled ? 'taskName marked' : element.completed ? 'taskName marked-light' : 'taskName'}>{element.task}</span>
                             <div className="cross-div">
-                                <img onClick={() => {deleteItem(element.id)}} src="images/icon-cross.svg"/>
+                                <img onClick={() => {deleteItem(element.id)}} src={crossIcon}/>
                             </div>
                         </div>
                     )

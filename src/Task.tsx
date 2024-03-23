@@ -1,5 +1,7 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import checkIcon from '../images/icon-check.svg'
+import crossIcon from '../images/icon-cross.svg'
 function Task(props:any){
     const {darkModeEnabled, toggleCheck, element, deleteItem} = props;
     const {attributes, listeners, setNodeRef, transform, transition} = useSortable(element.id);
@@ -14,7 +16,7 @@ function Task(props:any){
                     <div className={darkModeEnabled && element.completed ? 'uncheck-dark completed' : element.completed ? 'uncheck-light completed' :  darkModeEnabled ? 'uncheck-dark' : 'uncheck-light'}>
                         {
                             element.completed ? (
-                                <img src="../images/icon-check.svg"></img>
+                                <img src={checkIcon}></img>
                             ) : ''
                         }
                     </div>
@@ -22,7 +24,7 @@ function Task(props:any){
             </div>
             <span className={element.completed && darkModeEnabled ? 'taskName marked' : element.completed ? 'taskName marked-light' : 'taskName'}>{element.task}</span>
             <div className="cross-div">
-                <img onClick={() => {deleteItem(element.id)}} src="images/icon-cross.svg"/>
+                <img onClick={() => {deleteItem(element.id)}} src={crossIcon}/>
             </div>
         </div>
     )
