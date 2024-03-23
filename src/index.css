@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+html{
+  height: 100%;
+}
+
+*{
+  font-family: 'Josefin Sans';
+}
+
+body{
+  height: 100%;
+  margin: 0;
+}
+
+#root.dark, #root.light{
+  height: 100%;
+  padding: 0px;
+}
+
+.app-dark{
+  background-color: hsl(235, 21%, 11%);
+}
+
+.app-light{
+  background-color: hsl(236, 33%, 92%);
+}
+
+.bg-top-dark, .bg-top-light{
+  background-image: url('../images/bg-desktop-dark.jpg');
+  width: 100%;
+  height: 250px;
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bg-top-light{
+  background-image: url('../images/bg-desktop-light.jpg');
+}
+
+.banner-section, .input-section{
+ display: flex;
+ width: 500px;
+ justify-content: space-between;
+ align-items: center
+}
+
+.input-section{
+  margin-top: 25px;
+}
+
+.banner-section img{
+  cursor: pointer;
+}
+
+.banner-head{
+  color: white;
+  margin: 0;
+  letter-spacing: 15px;
+}
+
+.input-area-dark, .input-area-light{
+  width: 100%;
+  background-color: hsl(235, 24%, 19%);
+  border: none;
+  height: 50px;
+  border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: hsl(233, 11%, 84%);
+}
+
+.input-area-light{
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(235, 21%, 11%);
+}
+
+input:focus, textarea {
+  outline: none !important;
+}
+
+.todolist-wrapper{
+  width: 100%;
+  height: calc(100vh - 250px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.todo-tasks-dark, .todo-tasks-light{
+  height: auto;
+  max-height: 450px;
+  overflow-y: scroll;
+  width: 500px;
+  background-color: hsl(235, 24%, 19%);
+  margin-top: -50px;
+  border-radius: 5px;
+  color: hsl(233, 11%, 84%);
+}
+
+.todo-tasks-dark::-webkit-scrollbar, .todo-tasks-light::-webkit-scrollbar{
+  display: none;
+}
+
+.todo-tasks-light{
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(235, 21%, 11%);
+}
+
+.task, .task-light{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 23px 25px 17px 10px;
+  border-bottom: 1px solid hsl(235, 19%, 35%);
+  cursor: pointer;
+}
+
+.task-light {
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+}
+
+.circle-div, .circle-div-light{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background: hsl(235, 19%, 35%);
+}
+
+.circle-div .uncheck-dark, .circle-div-light .uncheck-light{
+  height: 19px;
+  width: 19px;
+  border-radius: 50%;
+  background: hsl(235, 24%, 19%);
+  margin-top: 0.03rem;
+}
+
+.circle-div-light .uncheck-light{
+  background: hsl(0, 0%, 98%);
+}
+
+.circle-div-light{
+  background: hsl(233, 11%, 84%);
+}
+
+.uncheck-light.completed, .uncheck-dark.completed{
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(to bottom, hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.circle-div:hover, .circle-div-light:hover{
+  background: linear-gradient(to bottom, hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);
+}
+
+.checkbox-div, .cross-div{
+  cursor: pointer;
+  flex: 1;
+}
+
+.cross-div img{
+  display: none;
+}
+
+.task:hover .cross-div img, .task-light:hover .cross-div img{
+  display: block;
+  width: 14px;
+}
+
+.taskName{
+  flex: 30;
+  padding-left: 20px;
+}
+
+.options-div{
+  display: flex;
+  justify-content: space-between;
+  padding: 23px 25px 17px 10px;
+  color: hsl(235, 19%, 35%);
+  font-size: 14px;
+}
+
+.options-div-light{
+  color: hsl(233, 11%, 84%);
+}
+
+.options-div span:hover{
+  color: hsl(233, 11%, 84%);
+  transition: all ease-in-out 0.5;
+  cursor: pointer;
+}
+
+.options-div div{
+  flex: 5;
+}
+
+.options-div .mark-completed-wrapper{
+  flex: 6;
+  text-align: right;
+}
+
+.options-div .item-type-wrapper{
+  display: flex;
+  justify-content: center;
+  flex: 10;
+  justify-content: space-around;
+}
+
+.options-div .item-type-wrapper span.selected{
+  color: hsl(220, 98%, 61%)
+}
+
+.options-div-light .items-left-wrapper span{
+  color: hsl(236, 9%, 61%);
+  transition: all ease-in-out 0.5;
+  cursor: pointer;
+}
+
+.options-div-light span:hover{
+  color: hsl(236, 9%, 61%);
+  transition: all ease-in-out 0.5;
+  cursor: pointer;
+}
+
+.marked{
+  text-decoration: line-through;
+  color: hsl(235, 19%, 35%);
+}
+
+.marked-light{
+  text-decoration: line-through;
+  color: hsl(233, 11%, 84%)
+}
+
+.info{
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal;
+  
+}
